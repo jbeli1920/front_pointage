@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header text-center">
+      <h2>User Profile</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h4 class="card-title">{{ user.name }} {{ user.lastname }}</h4>
+          <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+          <p class="card-text"><strong>Role:</strong> {{ user.role }}</p>
+          <p class="card-text"><strong>Sexe:</strong> {{ user.sexe }}</p>
+          <p class="card-text"><strong>Matricule:</strong> {{ user.matricule }}</p>
+          <p class="card-text"><strong>Phone:</strong> {{ user.tel }}</p>
+          <p class="card-text"><strong>Date of Birth:</strong> {{ user.dateNaissance }}</p>
+        </div>
+      </div>
+      <a class="btn btn-primary" routerLink="../update-profile">Update profile</a>
+    </div>
+  </div>
+
+  <div class="card mt-5">
+    <div class="card-header text-center">
+      <h2>User Work Details</h2>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Break Day</th>
+            <th>Extra Hours</th>
+            <th>Work Day</th>
+            <th>Work Hour</th>
+            <th>User ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of workDetails">
+            <td>{{ getDayName(x.breakDay) }}</td>
+            <td>{{ x.extraHours }}</td>
+            <td>{{ getDayName(x.workDay) }}</td>
+            <td>{{ x.workHour }}</td>
+            <td>{{ x.userId }}</td>
+            <td>{{ x.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
